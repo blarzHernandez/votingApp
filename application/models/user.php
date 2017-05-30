@@ -12,9 +12,40 @@ class User extends CI_Model{
         
     }
 
+    //get name
+     public function getUserName($user){
+            try {
+
+                $sql=  $this->db->query("select names from user where username='".$user."' ");
+
+                if(!$sql){
+                    throw new Exception ("Errors: ".$this->db->_error_message());
+                
+                }else{
+                    $count=  $sql->num_rows();
+
+                    if($count >= 1){
+                        $data = $sql->result_array();
+                        return $data[0]['names'];
+                    }
+                }
+                    
+                
+            } catch (Exception $exc) {
+                echo $exc->getMessage();
+            }
+
+            return NULL;
+
+
+        }//end function
+
+
     //Logueo usuario
         public function login($user,$pass)
         {
+            
+
             $respuesta= FALSE;
             try {
 

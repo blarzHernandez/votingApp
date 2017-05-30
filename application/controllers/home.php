@@ -20,11 +20,10 @@ class Home extends CI_Controller {
 
 	 //Construct
 	 public function __construct(){
-
 		 parent::__construct();
 		 $this->load->model("user");//User model
-
 	 }
+
 	public function index()
 	{
 		$this->load->view('index');
@@ -34,8 +33,20 @@ class Home extends CI_Controller {
 	public function login(){
 			$user       = $this->input->post('username');
      		$pass       = $this->input->post('password');
+
+			 //debugging
+			 $user       = "blarz";
+     		 $pass       = "rhernandez";
+
+
 			$isValid 	= $this->user->login($user,$pass);
-			var_dump($isValid);
+			if($isValid){
+				$data["dinamic"] = "voting_main";
+				$this->session->set_userdata("user",$user);
+				$this->session->set_userdata("userName",$this->user->getUserName($user));
+					//redirect
+					$this->load->view("templates/main",$data);
+			}
 
 
 	}

@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Voting applicationr</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css" >
-	<script src="assets/js/jquery-3.2.1.min.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="assets/js/bootstrap.js"></script>
-
-
-</head>
+<?php $this->load->view("templates/header");?>
 <body>
 
 <div id="container">
