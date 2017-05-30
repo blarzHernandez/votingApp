@@ -13,7 +13,7 @@ foreach ($commitees as $value){
     foreach ($candidatesArr as $key => $val) {
     ?>
       <div class="well col-sm-4">
-          <a href="index.php?/home/vote?id_candidate='".$val['ID_CANDIDATE']"'  title='Vote'> <img src="<?php echo $val["PHOTO"];?>" alt="<?php echo 'title';?>" class="img-rounded">
+          <a href="index.php?/home/vote?id_candidate=<?php  echo $val['ID_CANDIDATE']."&commitee=".$val['COMMITEE'];?>"  title='Vote'> <img src="<?php echo $val["PHOTO"];?>" alt="<?php echo 'title';?>" class="img-rounded">
               <h4><?php echo $val["NAMES"];?> <div class = "well warning"><?php echo $val["COUNTRY"];?></div></h4>
           </a>        
       </div>

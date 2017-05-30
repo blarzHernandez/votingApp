@@ -16,7 +16,7 @@
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
         <a data-toggle="modal" class="btn btn-default" href="<?php echo base_url('index.php?/home/loadUserRegistration'); ?>" data-target="#userRegistration">Sign Up!</a>
-        <a type="button" class="btn btn-default" href="<?php  echo base_url('/index.php?/home/login'); ?>" >Log In!</a>
+        <a type="button" class="btn btn-default" href="<?php  echo base_url('/index.php?/home/login'); ?>" >Log In</a>
       </div>
     </div>
   </fieldset>

@@ -110,7 +110,7 @@ class Home extends CI_Controller {
 		//Destroy session of user
 		public function destroySession(){
 				$this->session->sess_destroy();
-				redirect('index.php?/home');
+				redirect('index.php?/home/');
 			}
 		}
 

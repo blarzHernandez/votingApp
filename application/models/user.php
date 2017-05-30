@@ -111,10 +111,12 @@ class User extends CI_Model{
                     throw new Exception ("Errors: ".$this->db->_error_message());
                     return FALSE;
                 }else{
+                   // var_dump(count($sql));
                     $count=  $sql->num_rows();
-
+  
                     if($count == 1)//
                     {
+                      
                         $respuesta= TRUE;
                     }
                     else
