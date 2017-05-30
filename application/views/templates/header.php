@@ -10,6 +10,7 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="assets/js/bootstrap.js"></script>
 	<script src="assets/js/validator.js"></script>
+	<script src="assets/js/common.js"></script>
 
 
 </head>

@@ -23,6 +23,18 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-lg-3 control-label">Email</label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" placeholder="email" name="email" id="email" type="text" required >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label">Country</label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" placeholder="country" name="country" id="country" type="text" required >
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-lg-3 control-label">Username</label>
                                     <div class="col-md-8">
                                         <input class="form-control" placeholder="username" name="username" id="username" type="text" required >
@@ -47,8 +59,8 @@
 </form>
       <div class="modal-footer">
          
-            <button type="button" id="sign-up" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-off"></span> Salir</button>
-            <button type="button" id="btn1" class="btn btn-success ladda-button" data-style="expand-left"  ><span class="glyphicon glyphicon-send"></span> Enviar</button>
+            <button type="button" id="exit" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-off"></span> Salir</button>
+            <button type="button" id="sign-up" class="btn btn-success ladda-button" data-style="expand-left"  ><span class="glyphicon glyphicon-send"></span> Enviar</button>
         
       </div>
       <script type="text/javascript">
@@ -58,10 +70,10 @@
         //---------Event Click-----------------
         $("#sign-up").click(function (e) {
             e.preventDefault();
-            console.log(e);
+           
             //Call AJAX
-          /*  $.ajax({
-                url     :"<?php echo base_url("home/userRegister");?>",
+            $.ajax({
+                url     :"<?php echo base_url("index.php?/home/userRegister");?>",
                 type    :"POST",
                 datatype:'json',
                 data    :$("form#userRegistration").serialize(),            
@@ -73,20 +85,18 @@
                          mensajeError("oculto",obj.respuesta);
                     }
                     else{
-                       //Success
-                       sendMailAdmin();
+                       //Success                      
                        mensajeOk("oculto",obj.respuesta);
-                       $("form#registerUserNew").resetForm();
+                       
                     }
-                    load.stop();//stop loading
+                   
                 },
                 error   : function(jqXHR,codStatus,textThrow){
-                    //Call function 
-                    var mensa = catchError(jqXHR.status,textThrow);
-                    mensajeError("oculto",mensa);
-                    load.stop();//stop loading
+                    //Call function                    
+                    mensajeError("oculto",qXHR.status);
+                   
                 }
-            });*///end AJAx
+            });///end AJAx
             
             
         });//End event click

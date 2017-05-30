@@ -41,6 +41,62 @@ class User extends CI_Model{
         }//end function
 
 
+ //get country of user
+     public function getCountry($user){
+            try {
+
+                $sql=  $this->db->query("select country from user where username='".$user."' ");
+
+                if(!$sql){
+                    throw new Exception ("Errors: ".$this->db->_error_message());
+                
+                }else{
+                    $count=  $sql->num_rows();
+
+                    if($count >= 1){
+                        $data = $sql->result_array();
+                        return $data[0]['country'];
+                    }
+                }
+                    
+                
+            } catch (Exception $exc) {
+                echo $exc->getMessage();
+            }
+
+            return NULL;
+
+
+        }//end function
+
+        //get commitee 
+     public function getCommitte($user){
+            try {
+
+                $sql=  $this->db->query("select commitee from user where username='".$user."' ");
+
+                if(!$sql){
+                    throw new Exception ("Errors: ".$this->db->_error_message());
+                
+                }else{
+                    $count=  $sql->num_rows();
+
+                    if($count >= 1){
+                        $data = $sql->result_array();
+                        return $data[0]['commitee'];
+                    }
+                }
+                    
+                
+            } catch (Exception $exc) {
+                echo $exc->getMessage();
+            }
+
+            return NULL;
+
+
+        }//end function
+
     //Logueo usuario
         public function login($user,$pass)
         {
@@ -75,7 +131,29 @@ class User extends CI_Model{
 
         }//end function
 
+public function insert($data){
+    try {
+$username = $data['username'];
+$pass=$data['password'];
+$names= $data['names'];
+$surnames=$data['surnames'];
+$country=$data['country'];
+$email = $data['email'];
 
+                $sql=  $this->db->query("insert into  user values('".$username."','".$pass."','".$names."','".$surnames."','".$email."','".$country."')");
+
+                if(!$sql){
+                    throw new Exception ("Errors: ".$this->db->_error_message());
+                    return FALSE;
+                }else{
+                   return TRUE;
+                }
+            } catch (Exception $exc) {
+                $respuesta= $exc->getMessage();
+            }
+            return FALSE;
+
+}
 
 
 

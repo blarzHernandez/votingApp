@@ -1,4 +1,4 @@
-<form class="form-horizontal" action="./home/login" method="POST">
+<form class="form-horizontal" action="index.php?/home/login" method="POST">
   <fieldset>
     <legend>Login</legend>
     <div class="form-group">
@@ -10,13 +10,13 @@
     <div class="form-group">
       <label for="inputPassword" class="col-lg-2 control-label">Password</label>
       <div class="col-lg-10">
-        <input type="password" class="form-control" data-bv-notempty="true"  name="password" required id="inputPassword" placeholder="Password">
+        <input type="password" class="form-control" data-bv-notempty="true"  name="password" required id="password" placeholder="Password">
       </div>
     </div>     
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
         <a data-toggle="modal" class="btn btn-default" href="<?php echo base_url('index.php?/home/loadUserRegistration'); ?>" data-target="#userRegistration">Sign Up!</a>
-        <button type="submit" class="btn btn-default" href="<?php  echo base_url('home/login/'); ?>" >Log In!</button>
+        <a type="button" class="btn btn-default" href="<?php  echo base_url('/index.php?/home/login'); ?>" >Log In!</a>
       </div>
     </div>
   </fieldset>
