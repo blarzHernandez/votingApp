@@ -27,6 +27,7 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('index');
+
 	}
 
 
@@ -49,6 +50,22 @@ class Home extends CI_Controller {
 			}
 
 
+	}
+
+	//Load user registration form
+        public function loadUserRegistration()
+        {
+            
+            //Cambiar--------------
+            $arr['modalTitle']="Users Registration";//Title modal            
+            $this->load->view('registration',$arr);//Layout
+            
+        }
+
+//Destroy session of user
+	public function destroySession(){
+		  $this->session->sess_destroy();
+		  redirect('home');
 	}
 }
 

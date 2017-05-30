@@ -17,7 +17,9 @@ foreach ($committe as $value){
     foreach ($candidatesArr as $key => $val) {
     ?>
       <div class="well col-sm-4">
-        <img src="<?php echo $val["photo"];?>" alt="<?php echo 'title';?>" class="img-rounded">
+          <a href="#" title='Vote'> <img src="<?php echo $val["photo"];?>" alt="<?php echo 'title';?>" class="img-rounded">
+              <h4><?php echo $val["name"];?> <div class = "well warning"><?php echo $val["country"];?></div></h4>
+          </a>        
       </div>
     <?php
         }

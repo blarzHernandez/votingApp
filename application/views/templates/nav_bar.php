@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="<?php echo base_url();?>">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Salir</a></li>
+        <li><a href="home/destroSession">Salir</a></li>
         
       </ul>
        <div class = 'row' style="color:white;" > <?php echo "Hola: " . $this->session->userdata("userName");?></div>
