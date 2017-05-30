@@ -8,17 +8,15 @@ class User extends CI_Model{
     //Construct
     public function __construct() {
         parent::__construct();
-        $db = $this->load->database('default', TRUE);//load database segun archivo config.
-        if(!$db){
-            $this->load->db("default");
-        }
+         $this->load->database();//load database segun archivo config.
+        
     }
 
     //Logueo usuario
         public function login($user,$pass)
         {
             $respuesta= FALSE;
-        /*    try {
+            try {
 
                 $sql=  $this->db->query("select * from user where username='".$user."'  and password='".$pass."'");
 
@@ -40,7 +38,7 @@ class User extends CI_Model{
             } catch (Exception $exc) {
                 $respuesta= $exc->getMessage();
             }
-*/
+
             return $respuesta;
 
 

@@ -33,8 +33,8 @@ class Home extends CI_Controller {
 
 	public function login(){
 			$user       = $this->input->post('username');
-      $pass       =$this->input->post('password');
-			$isValid = $this->user->login($user,$pass);
+     		$pass       = $this->input->post('password');
+			$isValid 	= $this->user->login($user,$pass);
 			var_dump($isValid);
 
 
